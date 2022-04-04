@@ -1,7 +1,7 @@
 import EmployeesListItem from '../employees-list-item/employees-list-item';
 import './employees-list.css';
 
-const EmployeesList = ({data, onDelete}) => { //Массив с компонентами для построения новых компонентов
+const EmployeesList = ({data, onDelete, onToggleProp}) => { //Массив с компонентами для построения новых компонентов
 
 	const elements = data.map(item => { //Перебираем map - каждый элемент массива item
 
@@ -12,7 +12,9 @@ const EmployeesList = ({data, onDelete}) => { //Массив с компонен
 			<EmployeesListItem
 			key={id} 
 			{...itemProps}
-			onDelete={() => onDelete(id)}/>
+			onDelete={() => onDelete(id)}
+			onToggleProp={(e) => onToggleProp(id, e.currentTarget.getAttribute('data-toggle'))}
+			/>
 			//С каждым проходом перебора нам возвращается компонент с пропсами компонетов из массива
 		)
 	})
