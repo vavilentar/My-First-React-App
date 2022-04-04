@@ -1,7 +1,7 @@
 import EmployeesListItem from '../employees-list-item/employees-list-item';
 import './employees-list.css';
 
-const EmployeesList = ({data}) => { //Массив с компонентами для построения новых компонентов
+const EmployeesList = ({data, onDelete}) => { //Массив с компонентами для построения новых компонентов
 
 	const elements = data.map(item => { //Перебираем map - каждый элемент массива item
 
@@ -9,7 +9,10 @@ const EmployeesList = ({data}) => { //Массив с компонентами �
 		return (
 			// <EmployeesListItem name={item.name} salary={item.salary}/> 
 			// Или используя ObjectSpread оператор
-			<EmployeesListItem key={id} {...itemProps} />
+			<EmployeesListItem
+			key={id} 
+			{...itemProps}
+			onDelete={() => onDelete(id)}/>
 			//С каждым проходом перебора нам возвращается компонент с пропсами компонетов из массива
 		)
 	})
