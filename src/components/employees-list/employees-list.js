@@ -4,10 +4,12 @@ import './employees-list.css';
 const EmployeesList = ({data}) => { //Массив с компонентами для построения новых компонентов
 
 	const elements = data.map(item => { //Перебираем map - каждый элемент массива item
+
+		const {id, ...itemProps} = item;
 		return (
 			// <EmployeesListItem name={item.name} salary={item.salary}/> 
 			// Или используя ObjectSpread оператор
-			<EmployeesListItem {...item} />
+			<EmployeesListItem key={id} {...itemProps} />
 			//С каждым проходом перебора нам возвращается компонент с пропсами компонетов из массива
 		)
 	})
@@ -20,3 +22,16 @@ const EmployeesList = ({data}) => { //Массив с компонентами �
 }
 
 export default EmployeesList;
+
+//Вариант если с backend не пришли уникальные идентифиторы:
+
+// const elements = data.map((item, i) => { //Перебираем map - каждый элемент массива item
+
+// 	const {id, ...itemProps} = item;
+// 	return (
+// 		// <EmployeesListItem name={item.name} salary={item.salary}/> 
+// 		// Или используя ObjectSpread оператор
+// 		<EmployeesListItem key={i} {...itemProps} />
+// 		//С каждым проходом перебора нам возвращается компонент с пропсами компонетов из массива
+// 	)
+// })
