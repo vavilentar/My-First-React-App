@@ -21,7 +21,7 @@ class SearchPanel extends Component {
 				className="form-control search-input"
 				placeholder="Найти сотрудника"
 				value={this.state.value}
-				onChange={this.onUpdateSearch}/> //Готовые классы из библиотеки Bootstrap
+				onChange={this.onUpdateSearch}/> 
 		);
 	}
 };
