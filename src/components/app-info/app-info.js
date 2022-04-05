@@ -1,4 +1,5 @@
-import './app-info.css';
+// import './app-info.css';
+import './app-info.scss';
 
 const AppInfo = ({increased, employees}) => {
 	return (

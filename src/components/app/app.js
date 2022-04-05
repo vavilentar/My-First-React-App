@@ -9,7 +9,8 @@ import EmployeesList from '../employees-list/employees-list';
 import EmployeesAddFrom from '../employees-add-form/employees-add-form';
 
 //Импорт стилей
-import './app.css';
+// import './app.css';
+import './app.scss';
 
 class App extends Component {
 

@@ -1,5 +1,7 @@
 // import {Component} from 'react';
 import './employees-list-item.css';
+// import './employees-list-item.scss';
+
 
 // class EmployeesListItem extends Component{
 	const EmployeesListItem = (props) => {
@@ -40,7 +42,13 @@ import './employees-list-item.css';
 	
 		return (
 			<li className={classNames}>
-				<span onClick={onToggleProp} className="list-group-item-label" data-toggle="like">{name}</span>
+				<span 
+				onClick={onToggleProp} 
+				className="list-group-item-label" 
+				data-toggle="like"
+				//style={{fontSize: '1.5em'}} //react подставляет px (только px) автоматически в inline-styles
+				>{name}
+				</span>
 				<input type="text" className="list-group-item-input" defaultValue={salary + '$'} />
 				<div className="d-flex justify-content-center align-items-center">
 					<button type="button"
